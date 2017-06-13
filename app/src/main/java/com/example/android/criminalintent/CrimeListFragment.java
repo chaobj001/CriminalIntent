@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 /**
  * Created by wangchao on 2017/6/13.
  */
@@ -45,13 +47,29 @@ public class CrimeListFragment extends Fragment {
 
         private List<Crime> mCrimes;
 
+        //传入数据模型
         public CrimeAdapter(List<Crime> crimes) {
             mCrimes = crimes;
         }
 
+        //holder获取itemview
         @Override
-        public CrimeHolder omCreateViewHolder() {
+        public CrimeHolder omCreateViewHolder(ViewGroup parent, int viewType) {
+            LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
+            View view = layoutInflater.inflate(android.R.layout.simple_list_item_1, parent, false);
+            return new CrimeHolder(view);
+        }
 
+        //赋值
+        @Override
+        public void onBindViewHolder(CrimeHolder holder, int position) {
+            Crime crime = mCrimes.get(position);
+            holder.mTitleTextView.setText(crime.getTitle());
+        }
+
+        @Override
+        public int getItemCount() {
+            return mCrimes.size();
         }
 
     }
