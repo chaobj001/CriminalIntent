@@ -83,6 +83,8 @@ public class CrimeListFragment extends Fragment {
         public void onClick(View v) {
             Toast.makeText(getActivity(), mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT)
                     .show();
+            //移动动画测试
+            //mCrimeRecyclerView.getAdapter().notifyItemMoved(0,5);
         }
     }
 
