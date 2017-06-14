@@ -54,7 +54,7 @@ public class CrimeListFragment extends Fragment {
 
         //holder获取itemview
         @Override
-        public CrimeHolder omCreateViewHolder(ViewGroup parent, int viewType) {
+        public CrimeHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
             View view = layoutInflater.inflate(android.R.layout.simple_list_item_1, parent, false);
             return new CrimeHolder(view);
