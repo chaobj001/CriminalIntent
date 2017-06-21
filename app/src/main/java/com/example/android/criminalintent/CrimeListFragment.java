@@ -1,5 +1,6 @@
 package com.example.android.criminalintent;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -81,10 +82,14 @@ public class CrimeListFragment extends Fragment {
         //cell click事件实现
         @Override
         public void onClick(View v) {
-            Toast.makeText(getActivity(), mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT)
-                    .show();
+            //Toast.makeText(getActivity(), mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT)
+            //        .show();
             //移动动画测试
             //mCrimeRecyclerView.getAdapter().notifyItemMoved(0,5);
+
+            //Intent intent = new Intent(getActivity(), CrimeActivity.class);
+            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
+            startActivity(intent);
         }
     }
 
