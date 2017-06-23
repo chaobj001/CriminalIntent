@@ -78,6 +78,7 @@ public class CrimeFragment extends Fragment {
        // mDateButton.setText(mCrime.getDate().toString());
         //mDateButton.setEnabled(false);
 
+        //设置对话框
         mDateButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
